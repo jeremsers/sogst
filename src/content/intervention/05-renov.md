@@ -1,7 +1,7 @@
 ---
 title : Réparation et rénovation salle de bain et wc
-cover : "./cover/cover.png"
-description : Lors des projets de rénovation à Nice, les plombiers professionnels conçoivent et mettent en œuvre des systèmes de plomberie modernes et efficaces. Ils travaillent en coordination avec d'autres corps de métier pour optimiser la fonctionnalité et l'esthétique de votre espace, qu'il s'agisse de salles de bains ou de cuisines.
+cover : "./cover/renovation.jpg"
+description : Lors de vos projets de rénovation à Nice, Notre équipe conçoit et mets en œuvre des systèmes de plomberie modernes et efficaces. Nous travaillons en coordination avec d'autres corps de métier pour optimiser la fonctionnalité et l'esthétique de votre espace, qu'il s'agisse de salles de bains ou de cuisines.
 picto : ./picto/cuisine.png
 numb: '4'
 ---

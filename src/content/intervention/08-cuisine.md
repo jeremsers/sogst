@@ -1,7 +1,7 @@
 ---
 title : Installation et rénovation cuisine
-cover : "./cover/cover.png"
-description : Lors de l'installation ou de la rénovation de votre cuisine à Nice, les plombiers s'occupent de tous les aspects de la plomberie, y compris l'installation d'éviers, de lave-vaisselle et de robinets. Leur expertise assure une configuration optimale et un fonctionnement sans faille de votre cuisine rénovée.
+cover : "./cover/cuisine.jpg"
+description : Lors de l'installation ou de la rénovation de votre cuisine à Nice, notre équipe s'occupe de tous les aspects de la plomberie, y compris l'installation d'éviers, de lave-vaisselle et de robinets. Son expertise assure une configuration optimale et un fonctionnement sans faille de votre cuisine rénovée.
 picto : ./picto/cuisine.png
 numb: '7'
 ---

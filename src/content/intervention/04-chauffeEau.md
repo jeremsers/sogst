@@ -1,7 +1,7 @@
 ---
 title : Remplacement chauffe-eau électrique
-cover : "./cover/cover.png"
-description : Les plombiers à Nice offrent des services de remplacement de chauffe-eau, en installant des modèles modernes et économes en énergie. Ils garantissent une installation correcte et sécurisée, assurant un approvisionnement constant en eau chaude pour votre confort quotidien.
+cover : "./cover/cumulus.webp"
+description : Notre équipe offre des services de remplacement de chauffe-eau, en installant des modèles modernes et économes en énergie. Nous garantissons une installation correcte et sécurisée, assurant un approvisionnement constant en eau chaude pour votre confort quotidien.
 picto : ./picto/chauffe-eau.png
 numb: '3'
 ---

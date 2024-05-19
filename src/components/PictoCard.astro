@@ -4,11 +4,11 @@ interface Props {
   picto: ImageMetadata;
 }
 
-const { picto, title } = Astro.props;
+const { picto, title, numb } = Astro.props;
 import { Picture } from "astro:assets";
 ---
 
-<div class="picto-container">
+<div class=`picto-container${numb} picto-container`>
   <div class="picto">
     <Picture src={picto} alt=''class='picto-img' loading='lazy' format="avif" decoding="async"/>
   </div>
@@ -16,6 +16,8 @@ import { Picture } from "astro:assets";
     <h3>{title}</h3>
   </div>
 </div>
+
+
 
 <style lang="scss">
 
@@ -28,7 +30,10 @@ import { Picture } from "astro:assets";
   padding: 25px;
   height:clamp(50px,10vw,200px);
   width: clamp(50px,10vw,200px);
-  
+}
+
+.active{
+   background-color: grey;
 }
 .picto{
   display: flex;

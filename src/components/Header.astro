@@ -6,9 +6,9 @@ import logo from '../assets/images/logo.png'
 <header>
   <nav>
     <ul class="left-nav nav">
-      <li>Intervention</li>
-      <li>Tarifs</li>
-      <li>Avis</li>
+      <li><a href="#intervention">Intervention<a></li>
+      <li><a href="#tarif">Tarifs</a></li>
+      <li><a href="#avis">Avis</a></li>
     </ul>
     <Image class="logo" src={logo} alt ='logo'/>
     <ul class="right-nav nav">
@@ -32,6 +32,10 @@ import logo from '../assets/images/logo.png'
   ul{
     padding: 20px;
   }
+  a {
+    text-decoration: none;
+    color: white;
+  }
   nav {
     display: flex;
     flex-direction: row;
@@ -40,6 +44,10 @@ import logo from '../assets/images/logo.png'
     width: 100%;
     flex-grow: 1;
     font-size: clamp(12px,2vw,20px);
+    position: relative;
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
   }
   .nav {
     list-style: none;
@@ -49,6 +57,9 @@ import logo from '../assets/images/logo.png'
     gap: 1vw;
     justify-content: center;
     align-items: center;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
  
 
@@ -73,6 +84,8 @@ import logo from '../assets/images/logo.png'
     width: 20vw;
     height: 10vh;
     border-radius: 10px;
+    
+    
     
     
   }

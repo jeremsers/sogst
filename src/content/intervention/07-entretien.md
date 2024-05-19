@@ -1,7 +1,7 @@
 ---
 title : Entretien et réparation chaudière Gaz
-cover : "./cover/cover.png"
-description : Les plombiers à Nice proposent des services d'entretien et de réparation pour les chaudières à gaz. Ils inspectent, nettoient, et réparent les composants pour garantir un fonctionnement sûr et efficace, prolongeant ainsi la durée de vie de votre équipement et assurant votre confort thermique.
+cover : "./cover/chaudiere.jpg"
+description : Notre équipe propose des services d'entretien et de réparation pour les chaudières à gaz. Nous inspectons, nettoyons, et réparont les composants pour garantir un fonctionnement sûr et efficace, prolongeant ainsi la durée de vie de votre équipement et assurant votre confort thermique.
 picto : ./picto/chaudiere.png
 numb: '6'
 ---

@@ -1,7 +1,7 @@
 ---
 title : Installation sanitaire, chauffage & climatisation
-cover : "./cover/cover.png"
-description : Les plombiers à Nice réalisent des installations sanitaires pour équiper votre maison de lavabos, éviers, toilettes, et douches. Ils assurent une pose précise et conforme aux normes, garantissant une utilisation efficace et durable de vos équipements sanitaires.
+cover : "./cover/installation.jpg"
+description : Notre équipe réalise des installations sanitaires pour équiper votre maison de lavabos, éviers, toilettes, et douches. Nous assurons une pose précise et conforme aux normes, garantissant une utilisation efficace et durable de vos équipements sanitaires.
 picto : ./picto/climatisation.png
 numb: '5'
 ---

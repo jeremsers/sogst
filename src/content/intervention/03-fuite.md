@@ -1,7 +1,7 @@
 ---
 title : Recherche de fuite d'eau
-cover : "./cover/cover.png"
-description : Un plombier à Nice utilise des techniques avancées pour détecter rapidement et efficacement les fuites d'eau, minimisant ainsi les dommages potentiels à votre propriété. Leur expertise permet de localiser les fuites cachées derrière les murs ou sous le sol, garantissant des réparations précises et durables.
+cover : "./cover/fuite.png"
+description : Notre équipe utilise des techniques avancées pour détecter rapidement et efficacement les fuites d'eau, minimisant ainsi les dommages potentiels à votre propriété. Notre expertise permet de localiser les fuites cachées derrière les murs ou sous le sol, garantissant des réparations précises et durables.
 picto : ./picto/fuite-eau.png
 numb: '2'
 ---

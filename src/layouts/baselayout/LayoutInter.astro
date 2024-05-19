@@ -1,6 +1,6 @@
 ---
 import ViewTransitions from 'astro/components/ViewTransitions.astro';
-
+import '@fontsource-variable/cabin';
 interface Props {
 	title: string;
 }
@@ -36,19 +36,14 @@ const { title } = Astro.props;
 		);
 	}
 	html {
-		font-family: system-ui, sans-serif;
+		font-family: 'Cabin Variable', sans-serif;
 		background: #13151a;
 		background-size: 224px;
+		color: white;
+		
 	}
 	code {
 		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+			'Cabin Variable', sans-serif;
 	}
 </style>

@@ -13,7 +13,7 @@ const { img, title, body, priceMax, priceMin } = Astro.props;
 ---
 
 <div class="tarif-card">
-  <Picture src={img} alt={title} format="avif" class="tarif-img" decoding='async' loading='lazy' />
+  <Picture src={img} alt={title} format="avif" class="tarif-img" decoding='async' loading='lazy' width={1920} height={1080} />
   <div class="text-container">
     <span class="price">
       {priceMin}€ . {priceMax}€
@@ -31,8 +31,8 @@ const { img, title, body, priceMax, priceMin } = Astro.props;
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        width: 90%;
-       padding: 20px;
+        
+       padding: 5px;
         background-color: #ffffff;
         border-radius: 10px;
         color:black;
@@ -50,7 +50,7 @@ const { img, title, body, priceMax, priceMin } = Astro.props;
     }
     .tarif-img{
         width: 100%;
-        height: 50%;
+        height: 60%;
         border-radius: 10px;
         object-fit: cover;
     }

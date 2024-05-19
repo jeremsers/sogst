@@ -1,7 +1,7 @@
 ---
 title : "Dépannage chauffage et Sanitaire"
-cover : "./cover/cover.png"
-description : Pour tous vos besoins de dépannage en plomberie à Nice, les plombiers qualifiés interviennent rapidement pour résoudre une variété de problèmes, tels que les fuites, les tuyaux cassés, et les équipements défectueux. Leur expertise garantit des solutions fiables pour assurer le bon fonctionnement de votre système de plomberie.
+cover : "./cover/depannage.webp"
+description : Pour tous vos besoins de dépannage en plomberie à Nice, notre équipe intervient rapidement pour résoudre une variété de problèmes, tels que les fuites, les tuyaux cassés, et les équipements défectueux. Notre expertise garantit des solutions fiables pour assurer le bon fonctionnement de votre système de plomberie.
 picto : "./picto/plomberie.png"
 numb : "0"
 ---

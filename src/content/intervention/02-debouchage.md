@@ -1,7 +1,7 @@
 ---
 title : "Débouchage et dégorgement canalisation"
-cover : "./cover/cover.png"
-description : Les plombiers professionnels à Nice sont équipés pour déboucher les canalisations obstruées de manière rapide et efficace. Qu'il s'agisse de toilettes, d'éviers, ou de drains, ils utilisent des outils spécialisés pour éliminer les blocages, rétablissant ainsi le flux normal des eaux usées.
+cover : "./cover/debouchage.png"
+description : Notre équipe est équipée pour déboucher les canalisations obstruées de manière rapide et efficace. Qu'il s'agisse de toilettes, d'éviers, ou de drains, nous utilisons des outils spécialisés pour éliminer les blocages, rétablissant ainsi le flux normal des eaux usées.
 picto : "./picto/intervention-plomberie.png"
 numb: '1'
 ---

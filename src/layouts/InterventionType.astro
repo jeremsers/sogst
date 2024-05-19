@@ -6,13 +6,14 @@ import { Image } from "astro:assets";
 console.log(allInter)
 ---
 
-<section class="intervention" data-col = {allInter}>
+<section class="intervention" data-col = {allInter} id="intervention">
   <div class="pictocard-container">
     {
       allInter.map((intervention) => (
         <PictoCard
           picto={intervention.data.picto}
           title={intervention.data.title}
+          numb={intervention.data.numb}
         />
       ))
     }
@@ -39,17 +40,27 @@ console.log(allInter)
   document.addEventListener('astro:page-load', () => {
   const pictos = document.querySelectorAll(".picto-container");
   let init = document.querySelector(".presentation-container-0") as HTMLElement;
+  let init2 = document.querySelector(".picto-container0") as HTMLElement;
   init.style.display = "flex";
+  init2.classList.add("active");
   for (let i = 0; i < pictos.length; i++) {
     pictos[i].addEventListener("click", () => {
 
+      pictos.forEach(element => {
+        element.classList.remove("active");
+      });
+      let pictoselect = document.querySelector(`.picto-container${i}`) as HTMLElement;
+      pictoselect.classList.add("active");
         let interdisplay = document.querySelector(`.presentation-container-${i}`) as HTMLElement;
         let alldisplay = document.querySelectorAll(".presentation-container");
         alldisplay.forEach(element => {
           element.style.display = "none";})
         interdisplay.style.display = "flex";
 
+       
+
     });
+    
   };
 })
 </script>
@@ -85,7 +96,7 @@ console.log(allInter)
     display: flex;
     flex-direction: column;
     width: 65%;
-    background-color: #3a3a3a;
+    background-color: grey;
     color: white;
     text-align: justify;
     overflow: hidden;
@@ -121,11 +132,13 @@ console.log(allInter)
     font-size: clamp(24px, 2vw, 48px);
     margin: 0;
     text-align: center;
+    padding-block: 30px;
 }
 
   .presentation-text p{
       font-size: clamp(16px, 2vw, 24px);
       margin: 0;
+      padding-block: 20px;
     }
 
   button{
@@ -137,5 +150,6 @@ console.log(allInter)
     width: clamp(100px, 15vw, 150px);
     font-size: clamp(12px, 2vw, 20px);
     padding: 10px;
+    margin-top: 20px;
   }
 </style>

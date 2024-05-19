@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource-variable/cabin": "^5.0.19",
     "astro": "^4.6.3",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
