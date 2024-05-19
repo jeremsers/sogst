@@ -1,0 +1,76 @@
+---
+import {Picture} from  "astro:assets";
+import banner from '../assets/images/banner.jpg';
+
+---
+
+<section class="banner">
+  <div class="container">
+    <Picture
+      src={banner}
+      alt="banner"
+      height="108"
+      width={banner.width/10}
+      class="banner-img"
+      format="avif"
+      densities={[0.5,1.5, 2]}
+      loading={'lazy'}
+      decoding={'async'}
+      quality={80}
+    />
+    <div class="title-container">
+      <p class="subtitle">Situation d'urgence ?</p>
+      <h1 class="title">
+        Un plombier de notre équipe sur place dans moins de 2h
+      </h1>
+    </div>
+  </div>
+</section>
+
+<style>
+  .container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    
+    
+  }
+  .banner-img {
+    position: absolute;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .title-container {
+    z-index: 1;
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:center ;
+    
+  }
+  .title{
+  padding: 0 40px;
+width: 40%;
+font-size: clamp(20px,2vw,48px);
+}
+
+.subtitle{
+  width: 40%;
+  font-size: clamp(24px,2vw,48px);
+
+  color: red;
+  padding: 0 40px ;
+  font-weight: bold;
+
+}
+
+.banner{
+  min-height: 80vh;
+  width: 100vw;
+}
+</style>

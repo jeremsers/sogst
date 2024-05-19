@@ -1,0 +1,56 @@
+---
+import TarifCard from "../components/TarifCard.astro"
+import {getCollection} from "astro:content"
+const allTarif = await getCollection("tarifs")
+
+---
+
+
+<section class="tarif">
+    <h2>
+        Tarifs des prestations
+    </h2>
+    <div class="card-container">
+        {allTarif.map((tarif) => (
+            <TarifCard
+                title={tarif.data.title}
+                body={tarif.data.body}
+                img={tarif.data.img}
+                priceMin={tarif.data.priceMin}
+                priceMax={tarif.data.priceMax}
+            />
+        ))}
+    </div>
+</section>
+
+
+<style>
+    .tarif {
+        color: white;
+        font-size: clamp(16px,2vw,20px);
+        line-height: 1.6;
+        background-color: #201F41;
+        text-align: center;
+        min-height: 70vh;
+        padding: 20px;
+    }
+    h2{
+        margin: 0;
+        padding-bottom: 20px;
+        font-size: clamp(20px,2vw,48px);
+    }
+    .card-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        gap: 5vw;
+        margin-top: 50px;
+        @media (max-width: 1000px) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 700px) {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>

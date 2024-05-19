@@ -1,0 +1,57 @@
+---
+import Card from "../components/Card.astro";
+import piggy from "../assets/images/piggy.png";
+import quality from "../assets/images/quality.png";
+import satisfaction from "../assets/images/satisfaction.png";
+import stopwatch from "../assets/images/stopwatch.png";
+import type { Code } from "astro:components";
+import text from '../assets/text.json'
+---
+
+
+
+
+<section class="about">
+    <div class="about-container">
+        <Card
+        title="Vitesse"
+        body={text.vitesse}
+        img={stopwatch}/>
+        <Card
+        title="Experience"
+        body={text.experience}
+        img={piggy}/>
+        <Card
+        title="Qualite"
+        body={text.quality}
+        img={quality}/>
+        <Card
+        title="Satisfaction"
+        body={text.satisfaction}
+        img={satisfaction}/>
+        </div>
+</section>
+
+<style lang="scss">
+    .about{
+        background-color: #2E81ff;
+        padding: 40px;
+        min-height: 50vh;
+    }
+    .about-container{
+       display: grid;
+       grid-template-columns: 1fr 1fr 1fr 1fr;
+       justify-content: center;
+        gap: 40px;
+        @media (max-width: 1000px){
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: 600px){
+            grid-template-columns: 1fr;
+        }
+    }	
+    
+    p{
+        font-size: 12px;
+    }
+</style>

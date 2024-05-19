@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  picto: ImageMetadata;
+}
+
+const { picto, title } = Astro.props;
+import { Picture } from "astro:assets";
+---
+
+<div class="picto-container">
+  <div class="picto">
+    <Picture src={picto} alt=''class='picto-img' loading='lazy' format="avif" decoding="async"/>
+  </div>
+  <div class="title">
+    <h3>{title}</h3>
+  </div>
+</div>
+
+<style lang="scss">
+
+.picto-container{
+  background-color: #2e81ff;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+  height:clamp(50px,10vw,200px);
+  width: clamp(50px,10vw,200px);
+  
+}
+.picto{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.picto-img{
+  height: 5vh;
+  width: 5vh;
+}
+
+.title{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(12px,1vw,18px);
+  height: 40%;
+  & h3 {
+    font-size: clamp(10px,1vw,18px);
+    margin: 0;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+</style>

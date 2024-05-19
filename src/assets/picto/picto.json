@@ -1,0 +1,8 @@
+ chaudiere  "../assets/picto/chaudiere.png";
+chauffeEau  "../assets/picto/chauffe-eau.png";
+climatisation  "../assets/picto/climatisation.png";
+ cuisine "../assets/picto/cuisine.png";
+ fuiteEau  "../assets/picto/fuite-eau.png";
+ interPlomberie  "../assets/picto/intervention-plomberie.png";
+ plomberie  "../assets/picto/plomberie.png";
+ sanitaire  "../assets/picto/sanitaire.png";

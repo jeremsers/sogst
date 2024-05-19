@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets"
+import logo from '../assets/images/logo.png'
+---
+
+<header>
+  <nav>
+    <ul class="left-nav nav">
+      <li>Intervention</li>
+      <li>Tarifs</li>
+      <li>Avis</li>
+    </ul>
+    <Image class="logo" src={logo} alt ='logo'/>
+    <ul class="right-nav nav">
+      <li>Question Fréquentes</li>
+      <li>
+        <button> Contact </button>
+      </li>
+    </ul>
+  </nav>
+ 
+</header>
+
+<style lang="scss">
+  header {
+    background-color: #2e81ff;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    
+  }
+  ul{
+    padding: 20px;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    font-size: clamp(12px,2vw,20px);
+  }
+  .nav {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+
+  button{
+    background-color: #992a2a;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+    width: clamp(80px,12vw,150px);
+    height: 50px;
+    text-align: center;
+    font-size: clamp(12px,2vw,20px);
+    
+  }
+
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 10vh;
+    border-radius: 10px;
+    
+    
+  }
+
+</style>
