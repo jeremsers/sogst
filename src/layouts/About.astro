@@ -35,13 +35,17 @@ import text from '../assets/text.json'
 <style lang="scss">
     .about{
         background-color: #2E81ff;
-        padding: 40px;
+        padding: 0 10vw ;
         min-height: 50vh;
+        display: flex;
+        justify-content: center;
     }
     .about-container{
        display: grid;
        grid-template-columns: 1fr 1fr 1fr 1fr;
-       justify-content: center;
+       justify-items: center;
+       align-items: center;
+       
         gap: 40px;
         @media (max-width: 1000px){
             grid-template-columns: 1fr 1fr;

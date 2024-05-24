@@ -10,7 +10,7 @@ import logo from '../assets/images/logo.png'
       <li><a href="#tarif">Tarifs</a></li>
       <li><a href="#avis">Avis</a></li>
     </ul>
-    <Image class="logo" src={logo} alt ='logo'/>
+    <Image class="logo" src={logo} alt ='logo' width=300 height=150 />
     <ul class="right-nav nav">
       <li>Question Fréquentes</li>
       <li>
@@ -27,10 +27,13 @@ import logo from '../assets/images/logo.png'
     width: 100%;
     height: 10vh;
     display: flex;
+
+    
     
   }
   ul{
     padding: 20px;
+    
   }
   a {
     text-decoration: none;
@@ -41,7 +44,6 @@ import logo from '../assets/images/logo.png'
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     flex-grow: 1;
     font-size: clamp(12px,2vw,20px);
     position: relative;
@@ -78,16 +80,16 @@ import logo from '../assets/images/logo.png'
 
 
   .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20vw;
-    height: 10vh;
+    position: absolute;
+
+    left: 50%;
+
+    width: 15vw;
+    height: 10vw;
     border-radius: 10px;
-    
-    
-    
-    
+    object-fit: contain;
+    transform: translateX(-7.5vw);
+    ;
   }
 
 </style>

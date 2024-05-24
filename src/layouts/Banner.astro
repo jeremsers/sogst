@@ -27,7 +27,7 @@ import banner from '../assets/images/banner.jpg';
   </div>
 </section>
 
-<style>
+<style lang="scss">
   .container {
     position: relative;
     display: flex;
@@ -39,29 +39,41 @@ import banner from '../assets/images/banner.jpg';
     position: absolute;
     z-index: 0;
     height: 100%;
-    width: 100%;
+    width: 100vw;
     object-fit: cover;
   }
   
   .title-container {
-    z-index: 1;
     width: 100%;
-    min-height: 80vh;
+    height: 70vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content:center ;
+    &:before{
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: black;
+      opacity: 0.3;
+      
+    }
     
   }
   .title{
-  padding: 0 40px;
-width: 40%;
-font-size: clamp(20px,2vw,48px);
-}
-
+    padding: 0 40px;
+    width: 40%;
+    font-size: clamp(20px,2vw,48px);
+    z-index: 1;
+  }
+  
 .subtitle{
   width: 40%;
   font-size: clamp(24px,2vw,48px);
+  z-index: 1;
 
   color: red;
   padding: 0 40px ;
@@ -70,7 +82,7 @@ font-size: clamp(20px,2vw,48px);
 }
 
 .banner{
-  min-height: 80vh;
-  width: 100vw;
+  min-height: 53vh;
+  width: 100%;
 }
 </style>
