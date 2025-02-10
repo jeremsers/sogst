@@ -7,51 +7,55 @@ const allTarif = await getCollection("tarifs")
 
 
 <section class="tarif" id="tarif">
-    <h2>
-        Tarifs des prestations
-    </h2>
-    <div class="card-container">
-        {allTarif.map((tarif) => (
-            <TarifCard
-                title={tarif.data.title}
-                body={tarif.data.body}
-                img={tarif.data.img}
-                priceMin={tarif.data.priceMin}
-                priceMax={tarif.data.priceMax}
-            />
-        ))}
+    <div class="container">
+        <h2>Tarifs des prestations</h2>
+        <div class="tarif-grid">
+            {allTarif.map((tarif) => (
+                <TarifCard
+                    title={tarif.data.title}
+                    body={tarif.data.body}
+                    img={tarif.data.img}
+                    priceMin={tarif.data.priceMin}
+                    priceMax={tarif.data.priceMax}
+                />
+            ))}
+        </div>
     </div>
 </section>
 
 
-<style>
+<style lang="scss">
     .tarif {
-        color: white;
-        font-size: clamp(16px,2vw,20px);
-        line-height: 1.6;
-        background-color: #2e81ff;
-        text-align: center;
-        min-height: 70vh;
-        padding: 20px 10vw;
-
-    }
-    h2{
-        margin: 0;
-        padding-bottom: 20px;
-        font-size: clamp(20px,2vw,48px);
-    }
-    .card-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        align-items: center;
-        justify-items: center;
-        gap: 2vw;
-        margin-top: 50px;
-        @media (max-width: 1440px) {
-            grid-template-columns: 1fr 1fr;
+        background-color: var(--primary-color);
+        padding: var(--spacing-lg) 0;
+        color: var(--text-light);
+        
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
         }
-        @media (max-width: 1000px) {
+    }
+
+    h2 {
+        text-align: center;
+        font-size: clamp(2rem, 3vw, 2.5rem);
+        margin-bottom: var(--spacing-lg);
+        font-weight: 600;
+    }
+
+    .tarif-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--spacing-md);
+        
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        @media (max-width: 768px) {
             grid-template-columns: 1fr;
+            gap: var(--spacing-sm);
         }
     }
 </style>

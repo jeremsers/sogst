@@ -1,74 +1,96 @@
 <section class="avis" id="avis">
-    <h3> Faites confiance à ceux qui nous ont fait confiance</h3>
-    <div class="container"> <div class="avis-container"></div>
-  <div class="map-container">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32629.086733477456!2d7.196710802291036!3d43.709903550751264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd165ca2000c7%3A0x5f633740c181f010!2sPlombier%20Nice%20-%20Pms%20Services%20Plomberie!5e0!3m2!1sfr!2sfr!4v1715556682972!5m2!1sfr!2sfr"
-      width="800"
-      height="600"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-</div>
- 
+    <div class="container">
+        <h2>Faites confiance à ceux qui nous ont fait confiance</h2>
+        <div class="avis-grid">
+            <div class="avis-container">
+                <!-- Ici vous pourriez ajouter un composant pour les avis Google -->
+            </div>
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d32629.086733477456!2d7.196710802291036!3d43.709903550751264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdd165ca2000c7%3A0x5f633740c181f010!2sPlombier%20Nice%20-%20Pms%20Services%20Plomberie!5e0!3m2!1sfr!2sfr!4v1715556682972!5m2!1sfr!2sfr"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Google Maps"
+                ></iframe>
+            </div>
+        </div>
+    </div>
 </section>
 
-
-
-
-<style lang='scss'>
+<style lang="scss">
     .avis {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 80vh;
-        width: 100%;
-        background-color: #201f41;
-        gap: 5vh;
+        background-color: var(--dark-blue);
+        padding: var(--spacing-lg) 0;
+        color: var(--text-light);
+    }
+
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-md);
+    }
+
+    h2 {
+        text-align: center;
+        font-size: clamp(1.75rem, 3vw, 2.5rem);
+        margin-bottom: var(--spacing-lg);
+        font-weight: 600;
+        position: relative;
         
-    }
-    h3 {
-        font-size: 32px;
-        margin-top: 50px;
-    }
-    .container{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        width: 80vw;
-        @media (max-width: 1024px) {
-            flex-direction: column;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--primary-color);
         }
     }
-    .avis-container{
-        width: 60%;
-        height: 100%;
-        border-radius: 10px;
-        object-fit: cover;
-        @media (max-width: 1024px) {
-                width: 90%;
+
+    .avis-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-md);
+        
+        @media (max-width: 900px) {
+            grid-template-columns: 1fr;
         }
     }
-    .map-container{
-        width: 40%;
-        height: 100%;
-        border-radius: 10px;
-        object-fit: cover;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-        @media (max-width: 1024px) {
-                width: 90%;
+
+    .avis-container {
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: var(--radius-md);
+        padding: var(--spacing-md);
+        height: 400px;
+        box-shadow: var(--shadow-md);
+
+        @media (max-width: 768px) {
+            height: 300px;
         }
-        & iframe{
+    }
+
+    .map-container {
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        box-shadow: var(--shadow-md);
+        height: 400px;
+        
+        iframe {
             width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(0.2);
+            transition: var(--transition-normal);
             
-            border-radius: 10px;
+            &:hover {
+                filter: grayscale(0);
+            }
         }
 
+        @media (max-width: 768px) {
+            height: 300px;
+        }
     }
-    </style>
+</style>

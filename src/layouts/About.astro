@@ -12,50 +12,57 @@ import text from '../assets/text.json'
 
 
 <section class="about">
-    <div class="about-container">
-        <Card
-        title="Vitesse"
-        body={text.vitesse}
-        img={stopwatch}/>
-        <Card
-        title="Experience"
-        body={text.experience}
-        img={piggy}/>
-        <Card
-        title="Qualite"
-        body={text.quality}
-        img={quality}/>
-        <Card
-        title="Satisfaction"
-        body={text.satisfaction}
-        img={satisfaction}/>
+    <div class="container">
+        <div class="about-grid">
+            <Card
+                title="Vitesse"
+                body={text.vitesse}
+                img={stopwatch}
+            />
+            <Card
+                title="Experience"
+                body={text.experience}
+                img={piggy}
+            />
+            <Card
+                title="Qualite"
+                body={text.quality}
+                img={quality}
+            />
+            <Card
+                title="Satisfaction"
+                body={text.satisfaction}
+                img={satisfaction}
+            />
         </div>
+    </div>
 </section>
 
 <style lang="scss">
-    .about{
-        background-color: #2E81ff;
-        padding: 0 10vw ;
+    .about {
+        background-color: var(--primary-color);
+        padding: var(--spacing-lg) 0;
         min-height: 50vh;
-        display: flex;
-        justify-content: center;
+        
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
     }
-    .about-container{
-       display: grid;
-       grid-template-columns: 1fr 1fr 1fr 1fr;
-       justify-items: center;
-       align-items: center;
-       
-        gap: 40px;
-        @media (max-width: 1000px){
-            grid-template-columns: 1fr 1fr;
+
+    .about-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--spacing-md);
+        
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(2, 1fr);
         }
-        @media (max-width: 600px){
+        
+        @media (max-width: 768px) {
             grid-template-columns: 1fr;
+            gap: var(--spacing-sm);
         }
-    }	
-    
-    p{
-        font-size: 12px;
     }
 </style>

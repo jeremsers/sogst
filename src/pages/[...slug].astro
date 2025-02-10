@@ -1,75 +1,246 @@
 ---
 import type { GetStaticPaths } from "astro";
-import Header from "../components/Header.astro";
+import HeaderSlug from "../components/HeaderSlug.astro";
 import Footer from "../components/Footer.astro";
 import LayoutInter from "../layouts/baselayout/LayoutInter.astro";
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 
 export async function getStaticPaths() {
-  const interventions = await getCollection("intervention");
-  return interventions.map((entry) => {
-    return {
-      params: { slug: entry.slug },
-      props: { entry },
-    };
-  });
+    const interventions = await getCollection("intervention");
+    return interventions.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<LayoutInter title="">
-  <main>
-    <Header />
+<LayoutInter title={`PMS Plomberie - ${entry.data.title}`}>
+    <HeaderSlug />
+    
+    <main class="intervention-detail">
+        <div class="container">
+            <div class="hero-section">
+                <Image
+                    transition:name="anim"
+                    src={entry.data.cover}
+                    alt={entry.data.title}
+                    class="hero-image"
+                    width={1200}
+                    height={600}
+                />
+                <div class="hero-overlay">
+                    <h1>{entry.data.title}</h1>
+                </div>
+            </div>
 
-    <div class="container">
-      
-        <Image
-          transition:name="anim"
-          src={entry.data.cover}
-          alt={entry.data.title}
-        />
-      
+            <div class="content-section">
+                <article class="content-wrapper">
+                    <div class="content-text">
+                        <Content />
+                    </div>
 
-      <section class="content">
-        <Content />
-      </section>
-    </div>
+                    <aside class="sidebar">
+                        <div class="contact-card">
+                            <h3>Besoin d'une intervention ?</h3>
+                            <p>Nos experts sont disponibles 24/7 pour vous aider</p>
+                            <a href="tel:0643301366" class="phone-button">
+                                <i class="fas fa-phone"></i>
+                                06 43 30 13 66
+                            </a>
+                            <a href="mailto:contact@pms-plomberie06.fr" class="contact-button">
+                                <i class="fas fa-envelope"></i>
+                                Nous contacter
+                            </a>
+                        </div>
+                    </aside>
+                </article>
+            </div>
+        </div>
+    </main>
 
-</main>
-<Footer />
+    <Footer />
 </LayoutInter>
 
 <style lang="scss">
-  main {
-    background-color: gainsboro;
-    min-height: 90vh;
-    width: 100%;
-  }
-  h1 {
-    text-align: center;
-  }
-  img {
-      width: 50vw;
-      height: 100%;
-      object-fit: cover;
-      @media (max-width: 1440px) {
-        width: 90%;
-        margin-top: 50px;
+    .intervention-detail {
+        background-color: var(--background-light);
+        color: var(--text-dark);
+        padding-bottom: var(--spacing-lg);
     }
-}
-  .container {
-    display: flex;
-    flex-direction: row-reverse;
-    color: black;
-    align-items: center;
-    @media (max-width: 1440px) {
-      flex-direction: column;
+
+    .hero-section {
+        position: relative;
+        height: 60vh;
+        min-height: 400px;
+        margin-bottom: var(--spacing-lg);
+        overflow: hidden;
     }
-  }
-  .content {
-    padding: 50px;
-  }
+
+    .hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.7);
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+        padding: var(--spacing-md);
+
+        h1 {
+            color: var(--text-light);
+            font-size: clamp(2rem, 5vw, 4rem);
+            text-align: center;
+            max-width: 800px;
+            margin: 0;
+            animation: fadeIn 1s ease-out;
+        }
+    }
+
+    .content-section {
+        margin-top: -100px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .content-wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: var(--spacing-lg);
+        
+        @media (max-width: 1024px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .content-text {
+        background-color: var(--background-light);
+        padding: var(--spacing-lg);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lg);
+
+        :global(h2) {
+            color: var(--primary-color);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: var(--spacing-md);
+        }
+
+        :global(p) {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-dark);
+        }
+
+        :global(ul) {
+            padding-left: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+
+        :global(li) {
+            margin-bottom: var(--spacing-sm);
+        }
+    }
+
+    .sidebar {
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+    }
+
+    .contact-card {
+        background-color: var(--dark-blue);
+        color: var(--text-light);
+        padding: var(--spacing-lg);
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lg);
+        text-align: center;
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            opacity: 0.9;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            width: 100%;
+            padding: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition-normal);
+
+            i {
+                font-size: 1.2rem;
+            }
+        }
+
+        .phone-button {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-md);
+            }
+        }
+
+        .contact-button {
+            background-color: var(--secondary-color);
+            color: var(--text-light);
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: var(--shadow-md);
+            }
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-section {
+            height: 40vh;
+        }
+
+        .content-section {
+            margin-top: -50px;
+        }
+
+        .content-text {
+            padding: var(--spacing-md);
+        }
+
+        .contact-card {
+            position: static;
+            margin-top: var(--spacing-md);
+        }
+    }
 </style>

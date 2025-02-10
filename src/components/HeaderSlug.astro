@@ -7,28 +7,30 @@ import logo from '../assets/images/logo.png'
     <div class="container">
         <nav class="nav">
             <div class="nav-brand">
-                <Image 
-                    src={logo} 
-                    alt="PMS Plomberie Logo" 
-                    class="logo" 
-                    width={150} 
-                    height={60}
-                />
+                <a href="/">
+                    <Image 
+                        src={logo} 
+                        alt="PMS Plomberie Logo" 
+                        class="logo" 
+                        width={150} 
+                        height={60}
+                    />
+                </a>
             </div>
 
             <div class="nav-menu">
                 <ul class="nav-list">
                     <li class="nav-item">
-                        <a href="#intervention" class="nav-link">Interventions</a>
+                        <a href="/#intervention" class="nav-link">Interventions</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#tarif" class="nav-link">Tarifs</a>
+                        <a href="/#tarif" class="nav-link">Tarifs</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#avis" class="nav-link">Avis</a>
+                        <a href="/#avis" class="nav-link">Avis</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#faq" class="nav-link">FAQ</a>
+                        <a href="/#faq" class="nav-link">FAQ</a>
                     </li>
                 </ul>
             </div>
@@ -62,22 +64,6 @@ import logo from '../assets/images/logo.png'
         height: 80px;
         display: flex;
         align-items: center;
-        width: 100%;
-    }
-
-    .container {
-        width: 100%;
-        padding: 0 var(--spacing-lg);
-        margin: 0;
-        max-width: none;
-
-        @media (max-width: 1024px) {
-            padding: 0 var(--spacing-md);
-        }
-
-        @media (max-width: 768px) {
-            padding: 0 var(--spacing-sm);
-        }
     }
 
     .nav {
@@ -85,7 +71,10 @@ import logo from '../assets/images/logo.png'
         justify-content: space-between;
         align-items: center;
         height: 100%;
-        width: 100%;
+
+        @media (max-width: 1024px) {
+            padding: 0 var(--spacing-sm);
+        }
     }
 
     .nav-brand {
@@ -130,10 +119,8 @@ import logo from '../assets/images/logo.png'
             transition: var(--transition-normal);
         }
 
-        &:hover {
-            &::after {
-                width: 80%;
-            }
+        &:hover::after {
+            width: 100%;
         }
     }
 
@@ -240,7 +227,6 @@ import logo from '../assets/images/logo.png'
 </style>
 
 <script>
-    // Menu mobile toggle
     document.addEventListener('astro:page-load', () => {
         const mobileMenuButton = document.querySelector('.mobile-menu-button');
         const navMenu = document.querySelector('.nav-menu');
@@ -259,4 +245,4 @@ import logo from '../assets/images/logo.png'
                 : 'none';
         });
     });
-</script>
+</script> 

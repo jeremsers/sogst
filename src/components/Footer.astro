@@ -2,43 +2,132 @@
 
 ---
 
-<footer>
-    <ul class="primary">
-        <li>PMS Plomberie</li>
-        <li>278 Boulevard de la madeleine 06000 Nice</li>
-        <li>0643301366</li>
-        <li>Facebook / LinkedIn</li>
-    </ul>
-    <ul class="secondary">
-        <li>Mentions légales</li>
-        <li>Plan du site</li>
-        <li><a href="mailto:contact@pms-plomberie06.fr">Contact</a></li>
-
-    </ul>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>PMS Plomberie</h3>
+                <ul>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        278 Boulevard de la madeleine 06000 Nice
+                    </li>
+                    <li>
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:0643301366">06 43 30 13 66</a>
+                    </li>
+                    <li class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Liens utiles</h3>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Plan du site</a></li>
+                    <li><a href="mailto:contact@pms-plomberie06.fr">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {new Date().getFullYear()} PMS Plomberie. Tous droits réservés.</p>
+        </div>
+    </div>
 </footer>
 
-<style>
-    footer {
-    background-color: #3a3a3a;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 10px 20px;
+<style lang="scss">
+    .footer {
+        background-color: var(--text-dark);
+        color: var(--text-light);
+        padding: var(--spacing-lg) 0 var(--spacing-md);
     }
-    .primary {
-        text-align: left;
+
+    .container {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-md);
     }
-    .secondary {
-        text-align: right ;
+
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-lg);
         
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+        }
     }
-    ul {
-        padding: 0;
-        list-style: none;
-        font-size: clamp(12px,1vw,18px);
+
+    .footer-section {
+        h3 {
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.95rem;
+            opacity: 0.9;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+
+            i {
+                color: var(--primary-color);
+                font-size: 1.1rem;
+            }
+        }
+
+        a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition-normal);
+            
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
     }
-    a {
-        text-decoration: none;
-        color: white;
+
+    .social-links {
+        display: flex;
+        gap: var(--spacing-md);
+        margin-top: var(--spacing-sm);
+
+        a {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            
+            &:hover {
+                opacity: 1;
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    .footer-bottom {
+        padding-top: var(--spacing-md);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 0.9rem;
+        opacity: 0.7;
     }
 </style>

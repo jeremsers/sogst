@@ -10,47 +10,83 @@ import { Image } from "astro:assets";
 
 ---
 
-<div class="container">
-	<Image src={img} alt={title} format="webp" class="picto"  />
-	<h2>
-		{title}
-	</h2>
-	<p>{body}</p>
+<div class="card">
+	<div class="card-icon">
+		<Image 
+			src={img} 
+			alt={title} 
+			format="webp" 
+			class="icon"
+			width={80}
+			height={80}
+		/>
+	</div>
+	<div class="card-content">
+		<h2>{title}</h2>
+		<p>{body}</p>
+	</div>
 </div>
 
-<style>
-	.container {
+<style lang="scss">
+	.card {
+		background-color: var(--background-light);
+		border-radius: var(--radius-md);
+		padding: var(--spacing-md);
+		height: 100%;
+		min-height: 300px;
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		text-align: justify;
-		min-height: 40vh;
-		width: 100%;
-		overflow: hidden;
-		gap: 30px;
-		margin-top: 30px;
-		line-height: 1.6
+		gap: var(--spacing-md);
+		transition: var(--transition-normal);
+		box-shadow: var(--shadow-sm);
 		
+		@media (max-width: 768px) {
+			min-height: 250px;
+			padding: var(--spacing-sm);
+			gap: var(--spacing-sm);
 		}
 		
-	
-	.picto{
-		object-fit: cover;
-		
-		height: 8vw;
-		width: 8vw;
-		
+		&:hover {
+			transform: translateY(-5px);
+			box-shadow: var(--shadow-lg);
+			
+			.icon {
+				transform: scale(1.1) rotate(5deg);
+			}
+		}
 	}
-h2 {
-	font-size: 28px;
-	margin: 0;
-	height: 10%;
-}
-p{
-	margin: 0;
-	height: 60%;
-	font-size: 1.60vh;
-}
 
+	.card-icon {
+		padding: var(--spacing-sm);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+		.icon {
+			width: clamp(50px, 8vw, 80px);
+			height: clamp(50px, 8vw, 80px);
+			transition: var(--transition-normal);
+		}
+	}
+
+	.card-content {
+		text-align: center;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		gap: var(--spacing-sm);
+		
+		h2 {
+			color: var(--primary-color);
+			margin: 0;
+			font-weight: 600;
+		}
+
+		p {
+			color: var(--text-dark);
+			line-height: 1.6;
+			margin: 0;
+			opacity: 0.9;
+		}
+	}
 </style>
