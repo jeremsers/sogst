@@ -6,7 +6,12 @@ import { Image } from "astro:assets";
 console.log(allInter);
 ---
 
-<section class="intervention" data-col={allInter} id="intervention">
+<section
+	class="intervention"
+	id="intervention"
+	aria-label="Nos services de plomberie"
+>
+	<h2 class="sr-only">Services de plomberie à Nice</h2>
 	<div class="pictocard-container">
 		{
 			allInter.map((intervention, index) => (
